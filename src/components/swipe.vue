@@ -57,10 +57,9 @@ export default {
   ::v-deep .van-swipe {
     // margin-top: 30px;
     width:100%;
-    height: 100%;
     img {
       width: 100%;
-      height: 375px;
+      height: 300px;
     }
   }
 }
