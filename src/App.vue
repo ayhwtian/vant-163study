@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import swipe from "@/components/swipe.vue";
+import swipe from "@/views/home/swipe.vue";
 export default {
   name: "app",
   components: {
