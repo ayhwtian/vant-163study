@@ -18,6 +18,7 @@ Vue.use(Lazyload)
 Vue.use(Toast)
 
 export default {
+  name: "swipe",
   data() {
     return {
       images: [

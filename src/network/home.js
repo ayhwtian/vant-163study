@@ -5,3 +5,9 @@ export function getBanner() {
     url: '/index/banner'
   })
 }
+
+export function getNavbar() {
+  return request({
+    url: '/index/navbar'
+  })
+}
