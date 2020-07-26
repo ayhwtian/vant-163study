@@ -38,6 +38,7 @@ export default {
 #navbar {
   ::v-deep .van-grid-item {
     .van-grid-item__content {
+
       .van-grid-item__text {
         font-size: 26px;
       }
