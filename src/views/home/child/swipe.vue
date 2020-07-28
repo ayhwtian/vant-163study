@@ -21,10 +21,7 @@ export default {
   name: "swipe",
   data() {
     return {
-      images: [
-        // "https://dummyimage.com/'720x300'/f2d379&text=%E5%B9%BF%E5%91%8A",
-        // "http://dummyimage.com/'720x300'/79cbf2&text=广告",
-      ],
+      images: [],
     };
   },
   created() {
@@ -40,10 +37,8 @@ export default {
      */
     getBanner() {
       getBanner().then( res => {
-        // console.log(...res.bannerList)
         const banner = []
         banner.push(...res.bannerList)
-        // console.log(banner)
         for(var i=0; i<banner.length; i++){
           this.images.push(banner[i].img)
         }

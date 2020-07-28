@@ -46,7 +46,7 @@ export default {
       .van-icon {
         img {
           border-radius: 20%;
-          widows: 100%;
+          width: 80px;
           height: auto;
         }
       }

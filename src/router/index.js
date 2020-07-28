@@ -2,19 +2,29 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 定义链接地址
-// const Home = () => import('../views/home/Home')
+const My = () => import('@/views/my/my');
+const Home = () => import('@/views/home/home');
+const MyStudy = () =>import("@/views/mystudy/mystudy");
 
 Vue.use(VueRouter)
 
-  const routes = [
-    /* {
-      path: '',
-      redirect: '/home' //重定向
-    },
-    {
-      path: '/home',
-      component: Home //引用链接地址
-    }, */
+const routes = [
+  {
+    path: "/",
+    redirect: "/home"
+  },
+  {
+    path: "/home",
+    component: Home
+  },
+  {
+    path: '/my',
+    component: My
+  },
+  {
+    path: "/mystudy",
+    component: MyStudy
+  }
 ]
 
 const router = new VueRouter({

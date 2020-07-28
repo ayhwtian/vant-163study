@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-    <swipe></swipe>
-    <navbar></navbar>
+    <router-view />
+    <div class="null-line"></div>
+    <tabbar></tabbar>
   </div>
 </template>
 
 <script>
-import swipe from "@/views/home/swipe.vue";
-import navbar from "@/views/home/navbar";
+import tabbar from "@/components/tabbar";
 
 export default {
   name: "app",
   components: {
-    swipe,
-    navbar,
+    tabbar,
   },
   data() {
-    return {
-      active: 0,
-    };
+    return {};
   },
+  created() {},
+  methods: {},
 };
 </script>
 
 <style lang="scss">
 body {
   background-color: #f3f4f8;
+  @media only screen and (min-width: 768px) {
+    .null-line {
+      height: 8rem;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .null-line {
+      height: 3rem;
+    }
+  }
 }
 </style>
