@@ -4,26 +4,37 @@ import VueRouter from 'vue-router'
 // 定义链接地址
 const My = () => import('@/views/my/my');
 const Home = () => import('@/views/home/home');
-const MyStudy = () =>import("@/views/mystudy/mystudy");
+const MyStudy = () => import("@/views/mystudy/mystudy");
+const Login = () => import('@/views/Login');
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: "/",
-    redirect: "/home"
+    component: Login,
+    // redirect: "/home"
   },
   {
     path: "/home",
-    component: Home
+    component: Home,
+    meta: {
+      login_require: true
+    }
   },
   {
     path: '/my',
-    component: My
+    component: My,
+    meta: {
+      login_require: true
+    }
   },
   {
     path: "/mystudy",
-    component: MyStudy
+    component: MyStudy,
+    meta: {
+      login_require: true
+    }
   }
 ]
 
