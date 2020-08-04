@@ -10,8 +10,8 @@ export function request(config) {
   // 2、axios的拦截器
   // 2.1、请求拦截
   instance.interceptors.request.use(config => {
-    // 在请求之前做什么
     // 拦截后必须返回，要不第三部网络请求就没有config
+    // 在请求之前做什么
     return config
   }, err => {
     // 对请求错误做什么

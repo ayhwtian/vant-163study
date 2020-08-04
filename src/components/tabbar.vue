@@ -1,6 +1,10 @@
 <template>
-  <div id="tabbar">
-    <van-tabbar v-model="active" route @change="onChange">
+  <div id="tabbar" >
+    <van-tabbar 
+    v-model="active" 
+    route 
+    @change="onChange" 
+    safe-area-inset-bottom>
       <van-tabbar-item name="home" icon="wap-home-o" replace to="/home">首页</van-tabbar-item></van-tabbar-item></van-tabbar-item>
       <van-tabbar-item name="myStudy" icon="cluster-o" replace to="/mystudy">我的学习</van-tabbar-item>
       <van-tabbar-item name="my" icon="manager-o" replace to="/my">账号</van-tabbar-item>
