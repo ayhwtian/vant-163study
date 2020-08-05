@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Layout from '@/layout/Layout'
 
 // 定义链接地址
 const My = () => import('@/views/my/my');
@@ -12,30 +13,36 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "/",
+    redirect: "/login"
+  },
+  {
+    path: "/login",
     component: Login,
-    // redirect: "/home"
   },
   {
-    path: "/home",
-    component: Home,
+    path: "/",
+    component: Layout,
     meta: {
-      login_require: true
-    }
+      isVisible: true,
+    },
+    children: [
+      {
+        path: "home",
+        name: Home,
+        component: Home
+      },
+      {
+        path: "mystudy",
+        name: MyStudy,
+        component: MyStudy
+      },
+      {
+        path: "my",
+        name: My,
+        component: My
+      }
+    ]
   },
-  {
-    path: '/my',
-    component: My,
-    meta: {
-      login_require: true
-    }
-  },
-  {
-    path: "/mystudy",
-    component: MyStudy,
-    meta: {
-      login_require: true
-    }
-  }
 ]
 
 const router = new VueRouter({

@@ -5,9 +5,9 @@
     route 
     @change="onChange" 
     safe-area-inset-bottom>
-      <van-tabbar-item name="home" icon="wap-home-o" replace to="/home">首页</van-tabbar-item></van-tabbar-item></van-tabbar-item>
-      <van-tabbar-item name="myStudy" icon="cluster-o" replace to="/mystudy">我的学习</van-tabbar-item>
-      <van-tabbar-item name="my" icon="manager-o" replace to="/my">账号</van-tabbar-item>
+      <van-tabbar-item name="Home" icon="wap-home-o" replace to="/home">首页</van-tabbar-item>
+      <van-tabbar-item name="MyStudy" icon="cluster-o" replace to="/mystudy">我的学习</van-tabbar-item>
+      <van-tabbar-item name="My" icon="manager-o" replace to="/my">账号</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -22,12 +22,12 @@ export default {
   name: "tabbar",
   data() {
     return {
-      active: 'home',
+      active: 'Home',
     };
   },
   created() {
-    // 初始化页面的时候默认打开home，因为active初始化的时候默认是home
-    this.$router.push("/home")
+    // 刷新页面保持当前页
+    this.active = this.$route.name
   },
   methods: {
     onChange(index) {

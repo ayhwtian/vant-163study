@@ -1,23 +1,25 @@
 <template>
   <div id="app">
     <router-view />
-    <tabbar></tabbar>
     <div class="null-line"></div>
   </div>
 </template>
 
 <script>
-import tabbar from "@/components/tabbar";
+import Layout from '@/layout/Layout'
 
 export default {
   name: "app",
   components: {
-    tabbar,
+    Layout
   },
   data() {
     return {};
   },
   created() {},
+  computed: {
+
+  },
   methods: {},
 };
 </script>
