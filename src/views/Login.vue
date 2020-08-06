@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { getUser } from '@/network/home'
+
 export default {
   name: "login",
   data() {
@@ -53,7 +55,10 @@ export default {
   },
   methods: {
     onSubmit(values) {
-      
+      // console.log('value:', values);
+      getUser(){
+        getUser()
+      }
     },
   },
 };

@@ -22,9 +22,14 @@ export function getCourses() {
 }
 
 // 获取登陆信息
-export function getUser() {
+export function getUser(name, password) {
   return request({
-    usrl: '/login',
+    method: 'post',
+    url: '/login',
+    data: {
+      name: name,
+      password: password,
+    }
     
   })
 }
