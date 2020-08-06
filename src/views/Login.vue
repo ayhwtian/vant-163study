@@ -16,7 +16,7 @@
         placeholder="密码"
       />
       <div style="margin: 16px;">
-        <van-button :disabled="required" round block type="info" native-type="submit" @click="onSubmit">登录</van-button>
+        <van-button :disabled="required" round block type="info" native-type="submit">登录</van-button>
       </div>
     </van-form>
     <div class="footer">

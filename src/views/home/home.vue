@@ -22,7 +22,6 @@ export default {
     swipe,
     navbar,
     courses,
-    tabbar,
   },
   data() {
     return {

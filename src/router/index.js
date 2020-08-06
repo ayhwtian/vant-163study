@@ -12,34 +12,40 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    redirect: "/login"
-  },
-  {
     path: "/login",
     component: Login,
+    meta: {
+      requireAuth: '',
+    }
   },
   {
     path: "/",
     component: Layout,
-    meta: {
-      isVisible: true,
-    },
+    redirect: '/home',
     children: [
       {
-        path: "home",
-        name: Home,
-        component: Home
+        path: 'home',
+        name: 'Home',
+        component: Home,
+        meta: {
+          requierAuth: true,
+        },
       },
       {
         path: "mystudy",
-        name: MyStudy,
-        component: MyStudy
+        name: 'MyStudy',
+        component: MyStudy,
+        meta: {
+          requierAuth: true,
+        },
       },
       {
         path: "my",
-        name: My,
-        component: My
+        name: 'My',
+        component: My,
+        meta: {
+          requierAuth: true,
+        },
       }
     ]
   },
@@ -48,6 +54,25 @@ const routes = [
 const router = new VueRouter({
   routes,
   mode: 'history'
+})
+
+// 挂载路由导航守卫
+router.beforeEach((to, from, next) => {
+  // to 将要访问的路径
+  // from 代表从哪个路径跳转而来
+  // next 是一个函数，表示放行
+  // next有两种放行方式
+  // 1、next() 直接放行
+  // 2、next('/login') 强制跳转到login页
+
+  if (to.meta.requierAuth) {// 获取token
+    const tokenStr = window.sessionStorage.getItem('token')
+    if (!tokenStr) {
+      return next('login')
+    }
+  } else
+  return next()
+
 })
 
 export default router

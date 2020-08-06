@@ -20,3 +20,11 @@ export function getCourses() {
     url: '/index/courses'
   })
 }
+
+// 获取登陆信息
+export function getUser() {
+  return request({
+    usrl: '/login',
+    
+  })
+}

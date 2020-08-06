@@ -6,12 +6,10 @@
 </template>
 
 <script>
-import Layout from '@/layout/Layout'
 
 export default {
   name: "app",
   components: {
-    Layout
   },
   data() {
     return {};
