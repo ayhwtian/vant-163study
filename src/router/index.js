@@ -65,14 +65,19 @@ router.beforeEach((to, from, next) => {
   // 1、next() 直接放行
   // 2、next('/login') 强制跳转到login页
 
-  if (to.meta.requierAuth) {// 获取token
+  if (to.meta.requierAuth) {
+    // 获取token
     const tokenStr = window.sessionStorage.getItem('token')
+    // console.log(!tokenStr);
     if (!tokenStr) {
+      // console.log(tokenStr);
       return next('login')
+    } else {
+      return next()
     }
-  } else
-  return next()
-
+  } else {
+    return next()
+  }
 })
 
 export default router

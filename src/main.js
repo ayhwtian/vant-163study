@@ -5,8 +5,9 @@ import store from './store'
 
 import { Swipe, SwipeItem, Button, Tab, Tabs, Grid, GridItem} from 'vant'
 import { Cell, CellGroup, Image } from 'vant'
-import { Tabbar, TabbarItem } from 'vant';
+import { Tabbar, TabbarItem } from 'vant'
 import { Form, Field } from 'vant'
+import { Toast } from 'vant'
 
 
 
@@ -24,6 +25,7 @@ Vue.use(Tabbar)
 Vue.use(TabbarItem)
 Vue.use(Form)
 Vue.use(Field)
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 
