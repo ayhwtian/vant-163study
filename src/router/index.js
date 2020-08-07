@@ -69,6 +69,7 @@ router.beforeEach((to, from, next) => {
     // 获取token
     const tokenStr = window.sessionStorage.getItem('token')
     // console.log(!tokenStr);
+    // 如果没有token，强制跳转到登录页
     if (!tokenStr) {
       // console.log(tokenStr);
       return next('login')
