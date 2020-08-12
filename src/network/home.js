@@ -24,7 +24,6 @@ export function getCourses() {
 // 获取登陆信息
 export function getUser() {
   return request({
-    method: 'get',
     url: '/login',
   })
 }

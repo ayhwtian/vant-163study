@@ -4,7 +4,7 @@
       <van-field v-model="username" name="用户名" label="用户名" placeholder="用户名" ref="username" />
       <van-field v-model="password" type="password" name="密码" label="密码" placeholder="密码" />
       <div style="margin: 16px;">
-        <van-button :disabled="required" round block type="info" native-type="submit">登录</van-button>
+        <van-button :disabled="isValid" round block type="info" native-type="submit">登录</van-button>
       </div>
     </van-form>
     <div class="footer">
@@ -31,28 +31,23 @@ export default {
   },
   computed: {
     // 检测用户名和密码是否为空，如果为空那么登陆按钮不可用，如果不为空，登陆按钮可用。
-    changeName() {
-      if (this.username === "" || this.password === "") {
-        this.required = true;
-      } else {
-        this.required = false;
-      }
-    },
+    isValid(){
+      return this.username === "" || this.password === ""
+    }
   },
   watch: {
-    // 监听用户名和密码属性改变
-    changeName() {},
+    
   },
   methods: {
     onSubmit() {
       // console.log('value:', values);
       getUser().then(res => {
         // 服务器返回的数据中有状态返回，在res中获取到状态再分析可以不可以让用户登录
-        // console.log(res);
-        let { token, state } = res;
+        console.log(res);
+        const { token, state } = res;
         window.sessionStorage.setItem("token", token);
         if (state === 200) {
-          // Toast('登陆成功')
+          Toast('登陆成功')
           this.$router.push('/home');
         } else {
           Toast('登陆失败')
