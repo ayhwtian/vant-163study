@@ -3,7 +3,7 @@ import axios from 'axios'
 export function request(config) {
   // 1、创建axios实例
   const instance = axios.create({
-    baseURL: 'http://rap2.taobao.org:38080/app/mock/261951',
+    baseURL: 'http://rap2api.taobao.org/app/mock/261951',
     timeout: 5000 // 毫秒
   })
 
